@@ -4,7 +4,7 @@ import { useContext, useActionState, useOptimistic } from "react";
 export function Opinion({ opinion: { id, title, body, userName, votes } }) {
   const { upvoteOpinion, downvoteOpinion } = useContext(OpinionsContext);
 
-  connst[(optimisticVotes, setVotesOptimistically)] = useOptimistic(
+  const [optimisticVotes, setVotesOptimistically] = useOptimistic(
     votes,
     (prevVotes, mode) => (mode === "up" ? prevVotes + 1 : prevVotes - 1)
   );
